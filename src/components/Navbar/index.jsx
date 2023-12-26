@@ -18,6 +18,12 @@ export function Navbar() {
                     <option value={window.localStorage.getItem("i18nextLng") == "ru" ? "uz" : "ru"}>{window.localStorage.getItem("i18nextLng") == "ru" ? "UZ" : "RU"}</option>
                 </select>
             </div>
+            <div className="navSide">
+                <button onClick={() => navlink("/")}>{t("Navbar.0")}</button>
+                <button onClick={() => navlink("/more")}>{t("Navbar.1")}</button>
+                <button onClick={() => navlink("/")}>{t("Navbar.2")}</button>
+                <a href="tel:+998900000000">{t("Navbar.3")}</a>
+            </div>
         </div>
     )
 }

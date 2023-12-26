@@ -10,7 +10,10 @@
     width: 80%;
     margin: 1% 10%;
     border-radius: 1vw;
-    z-index: 1000;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: relative;
 }
 .Navbar h1{
     color: var(--purple);
@@ -38,4 +41,17 @@
 .Navbar div select:hover{
     color: var(--black);
     transform: scale(1.2);
+}
+.Navbar .navSide{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 2;
+    height: 100vw;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    display: none;
 }
