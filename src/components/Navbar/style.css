@@ -13,10 +13,9 @@
     left: 0;
     top: 0;
     z-index: 1;
-    position: relative;
 }
-.Navbar h1{
-    color: var(--purple);
+.Navbar img{
+    width: 12%;
 }
 .Navbar div{
     width: max-content;
@@ -42,16 +41,74 @@
     color: var(--black);
     transform: scale(1.2);
 }
+.Navbar div i{
+    display: none;
+    margin-left: 10%;
+}
 .Navbar .navSide{
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    background-color: var(--white);
-    z-index: 2;
-    height: 100vw;
+    height: max-content;
     display: flex;
-    justify-content: start;
-    align-items: start;
-    display: none;
+    flex-direction: column;
+    background: var(--white);
+    width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2vw;
+    padding: 3%;
+
+}
+.Navbar select{
+    border-radius: 2vw;
+}
+.Navbar option{
+    background-color: var(--white);
+    color: var(--purple);
+}
+@media(max-width: 900px) {
+    .Navbar div button,.Navbar div a,.Navbar div select{
+        font-size: 1.2vw;
+    }
+    .Navbar img{
+        width: 20%;
+    }
+    .Navbar{
+        margin: 2% 10%;
+    }
+}
+@media(max-width: 700px) {
+    .Navbar div button,.Navbar div a,.Navbar div select{
+        font-size: 1.3vw;
+    }
+    .Navbar img{
+        width: 25%;
+    }
+}
+@media(max-width: 500px) {
+    .Navbar div button,.Navbar div a,.Navbar div select,.Navbar div i{
+        display: none;
+        font-size: 4vw;
+    }
+    .Navbar div select, .Navbar div i{
+        display: block;
+    }
+    .Navbar img{
+        width:35%;
+    }
+    .Navbar{
+        margin: 3% 10%;
+    }
+    .Navbar .navSide{
+        top: 10vw;
+    }
+    .Navbar .navSide *{
+        display: flex;
+        width: 100%;
+        color: var(--purple);
+        margin: 2% 0;
+    }
 }

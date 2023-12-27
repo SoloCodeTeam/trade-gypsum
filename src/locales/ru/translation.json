@@ -4,5 +4,10 @@
         "1": "О НАС",
         "2": "ВЫПОЛНЕННЫЕ РАБОТЫ",
         "3": "КОНТАКТЫ"
+    },
+    "First": {
+        "0": "Комфортно с нами",
+        "1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aliquam vero, eveniet corrupti a reiciendis aspernatur nam nostrum sit neque eos",
+        "2": "ПОЛУЧИТЬ ИНФОРМАЦИЮ"
     }
 }
