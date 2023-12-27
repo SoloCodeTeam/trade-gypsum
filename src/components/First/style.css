@@ -5,8 +5,31 @@
     border-radius: 1vw;
     display: flex;
     align-items: center;
+    padding: 2% 0;
 }
 .First img{
-    width: 60%;
+    width: 55%;
     border-radius: 1vw;
+    margin-right: 2vw;
+}
+.First span h1{
+    color: var(--purple);
+    font-size: 3vw;
+}
+.First span p{
+    color: var(--gray);
+    width: 70%;
+    margin: 5% 0;
+}
+.First span button{
+    border: .1vw solid var(--purple);
+    color: var(--purple);
+    background: var(--white);
+    cursor: pointer;
+    padding: 3%;
+    border-radius: .3vw;
+}
+.First span button:hover{
+    color: var(--white);
+    background: var(--purple);
 }
