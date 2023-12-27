@@ -12,7 +12,7 @@
     border-radius: 1vw;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 .Navbar img{
     width: 12%;
@@ -43,7 +43,7 @@
 }
 .Navbar div i{
     display: none;
-    margin-left: 10%;
+    margin-left: 20%;
 }
 .Navbar .navSide{
     position: fixed;
@@ -74,7 +74,7 @@
         font-size: 1.2vw;
     }
     .Navbar img{
-        width: 20%;
+        width: 15%;
     }
     .Navbar{
         margin: 2% 10%;
@@ -84,11 +84,13 @@
     .Navbar div button,.Navbar div a,.Navbar div select{
         font-size: 1.3vw;
     }
-    .Navbar img{
-        width: 25%;
-    }
 }
 @media(max-width: 500px) {
+    .Navbar{
+        width: 100%;
+        margin: 3% 0;
+        padding: 1% 7%;
+    }
     .Navbar div button,.Navbar div a,.Navbar div select,.Navbar div i{
         display: none;
         font-size: 4vw;
@@ -99,11 +101,8 @@
     .Navbar img{
         width:35%;
     }
-    .Navbar{
-        margin: 3% 10%;
-    }
     .Navbar .navSide{
-        top: 10vw;
+        top: 15vw;
     }
     .Navbar .navSide *{
         display: flex;
