@@ -1,16 +1,56 @@
 .Second{
     background: var(--white);
-    border: .3vw solid var(--purple);
     border-bottom: none;
     border-top-right-radius: 3vw;
     border-top-left-radius: 3vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-    padding: 3%;
     width: 80%;
     margin: 0 auto;
-}
-.Second h1{
-    color: var(--purple);
     text-align: center;
-    font-size: 3vw;
+    position: relative;
+}
+.Second div{
+    height: 43vw;
+    z-index: 20;
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.Second video{
+    position:absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-top-right-radius: 2.7vw;
+    border-top-left-radius: 2.7vw;
+  }
+.Second h1{
+    color: var(--white);
+    font-size: 3.5vw;
+    z-index: 3;
+    margin-top: 7%;
+}
+.Second p{
+    color: var(--grey);
+    font-size: 1vw;
+    width: 50%;
+    text-align: left;
+    z-index: 3;
+    margin: 5% 0;
+}
+.Second button{
+    border: .1vw solid var(--white);
+    color: var(--white);
+    background: none;
+    cursor: pointer;
+    padding: 1.5% 3%;
+    font-size: 1vw;
+    border-radius: .3vw;
+    z-index: 3;
+}
+.Second button:hover{
+    color: var(--purple);
+    background: var(--white);
 }

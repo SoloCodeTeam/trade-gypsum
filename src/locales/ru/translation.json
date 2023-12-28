@@ -12,6 +12,17 @@
     },
     "Second": {
         "0": "О нас",
-        "1": "Biz haqimizda"
+        "1": "BNBM Central Asia Foreign Investment Co., Ltd. (далее как Central Asia BNBM) была основана 11 июня 2019 года. Компания располагается в свободной экономической зоне Коканда в Ферганской области. Годовой объем производства гипсокартона составляет 40млн. кв.м., легких стальных профилей 3тыс.тонн и 4млн. кв.м. декоративного гипсокартона и все это представляет собой комплексную базу по производству строительных материалов.",
+        "2": "Подробнее"
+    },
+    "Third": {
+        "0": "С нами",
+        "1": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, natus quis consequatur eos harum perferendis deserunt officiis illum nulla similique",
+        "2": "УДОБНЫЙ",
+        "3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, id.",
+        "4": "ПОЛЕГЧЕ",
+        "5": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, id.",
+        "6": "БЫСТРЕЕ",
+        "7": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, id."
     }
 }

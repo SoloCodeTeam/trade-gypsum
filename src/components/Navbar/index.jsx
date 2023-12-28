@@ -12,7 +12,7 @@ export function Navbar() {
             <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1703694773/BNBM%20trade-gypsum/BNBM_xm0j8g.png" alt="logo" />
             <div>
                 <button onClick={() => navlink("/")}>{t("Navbar.0")}</button>
-                <button onClick={() => navlink("/more")}>{t("Navbar.1")}</button>
+                <button onClick={() => window.location.href="/#2"}>{t("Navbar.1")}</button>
                 <button onClick={() => navlink("/")}>{t("Navbar.2")}</button>
                 <a href="tel:+998900000000">{t("Navbar.3")}</a>
                 <select onChange={(e) => { window.localStorage.setItem("i18nextLng", e.target.value);window.location.reload()}}>
@@ -25,7 +25,7 @@ export function Navbar() {
             {!bars ?
                 <div className="navSide">
                     <button onClick={() => navlink("/")}>{t("Navbar.0")}</button>
-                    <button onClick={() => navlink("/more")}>{t("Navbar.1")}</button>
+                    <button onClick={() => {window.location.href="/#2";setBars(false)}}>{t("Navbar.1")}</button>
                     <button onClick={() => navlink("/")}>{t("Navbar.2")}</button>
                     <a href="tel:+998900000000">{t("Navbar.3")}</a>
                 </div>
