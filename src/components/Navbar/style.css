@@ -89,7 +89,7 @@
     .Navbar{
         width: 100%;
         margin: 3% 0;
-        padding: 1% 7%;
+        padding: 1% 10%;
     }
     .Navbar div button,.Navbar div a,.Navbar div select,.Navbar div i{
         display: none;
@@ -103,7 +103,7 @@
         width:35%;
     }
     .Navbar .navSide{
-        top: 15vw;
+        top: 14vw;
     }
     .Navbar .navSide *{
         display: flex;
