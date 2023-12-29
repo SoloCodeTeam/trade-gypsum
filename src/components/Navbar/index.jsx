@@ -24,8 +24,8 @@ export function Navbar() {
             </div>
             {!bars ?
                 <div className="navSide">
-                    <button onClick={() => navlink("/")}>{t("Navbar.0")}</button>
-                    <button onClick={() => {window.location.href="/#2";setBars(false)}}>{t("Navbar.1")}</button>
+                    <button onClick={() => {window.location.href="/#1";setBars(true)}}>{t("Navbar.0")}</button>
+                    <button onClick={() => {window.location.href="/#2";setBars(true)}}>{t("Navbar.1")}</button>
                     <button onClick={() => navlink("/")}>{t("Navbar.2")}</button>
                     <a href="tel:+998900000000">{t("Navbar.3")}</a>
                 </div>

@@ -54,3 +54,25 @@
     color: var(--purple);
     background: var(--white);
 }
+@media(max-width: 500px){
+    .Second{
+        width: 100%;
+        margin: 0;
+    }
+    .Second div{
+        padding: 5%;
+        height: 56vw;
+    }
+    .Second h1{
+        font-size: 7vw;
+        margin-top: 0;
+    }
+    .Second p{
+        font-size: 2vw;
+        width: 80%;
+    }
+    .Second button{
+        font-size: 2.3vw;
+        padding: 2.5% 5%;
+    }
+}

@@ -39,6 +39,7 @@
 @media(max-width: 900px) {
     .First{
         margin:10%;
+        margin-bottom: 3%;
     }
     .First span p{
         width: 70%;
@@ -65,6 +66,7 @@
 @media(max-width: 500px) {
     .First{
         margin:15% 0;
+        margin-bottom: 0;
         flex-direction: column;
         text-align: center;
         width: 100%;

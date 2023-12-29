@@ -10,7 +10,7 @@ export function Second() {
                 <p>{t("Second.1")}</p>
                 <button>{t("Second.2")}</button>
            </div>
-                <video autoPlay muted loop>
+                <video autoplay="autoplay" loop="loop"  defaultMuted playsinline>
                       <source src="https://res.cloudinary.com/ds9evspym/video/upload/v1703788846/BNBM%20trade-gypsum/bnbm_video_1_evpocu.mp4" type="video/mp4"/>
                       Your browser does not support HTML5 video.
                 </video>

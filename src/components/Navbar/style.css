@@ -97,6 +97,7 @@
     }
     .Navbar div select, .Navbar div i{
         display: block;
+        font-size: 5vw;
     }
     .Navbar img{
         width:35%;

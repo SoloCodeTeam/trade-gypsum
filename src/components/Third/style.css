@@ -14,12 +14,16 @@
     width: 50%;
     margin: 3% auto;
     color: var(--grey);
+    font-size: 1.1vw;
 }
 .Third div{
     display: flex;
     align-items: center;
     justify-content: start;
     margin-top: 7%;
+}
+.Third div span{
+    width: 33%;
 }
 .Third div i{
     font-size: 2vw;
@@ -38,4 +42,28 @@
 }
 .Third span p{
     width: 70%;
+}
+@media (max-width: 500px) {
+    .Third{
+        width: 100%;
+        margin: 0;
+    }
+    .Third h1{
+        font-size: 7vw;
+    }
+    .Third p{
+        font-size: 2vw;
+    }
+    .Third div{
+        flex-wrap: wrap;
+    }
+    .Third div i{
+        font-size: 6vw;
+        padding: 10%;
+        border: .3vw solid var(--white);
+    }
+    .Third div h2{
+        font-size: 2.5vw;
+        margin: 10% 0;
+    }
 }
