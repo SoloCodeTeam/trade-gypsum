@@ -35,13 +35,43 @@
 .Third div h2{
     color: var(--white);
     margin: 3% 0;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
 }
 .Third div p{
     color: var(--grey);
 }
 .Third span p{
     width: 70%;
+}
+@media(max-width: 900px) {
+    .Third h1{
+        font-size: 4vw;
+    }
+    .Third p{
+        font-size: 1.7vw;
+    }
+    .Third div i{
+        font-size: 2.5vw;
+        padding: 7%;
+    }
+    .Third div h2{
+        font-size: 2vw;
+    }
+}
+@media(max-width: 700px) {
+    .Third h1{
+        font-size: 4.5vw;
+    }
+    .Third p{
+        font-size: 1.7vw;
+    }
+    .Third div i{
+        font-size: 3vw;
+        padding: 10%;
+    }
+    .Third div h2{
+        font-size: 2.5vw;
+    }
 }
 @media (max-width: 500px) {
     .Third{
