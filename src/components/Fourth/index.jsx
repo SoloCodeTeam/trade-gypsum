@@ -4,7 +4,7 @@ import "./style.css"
 export function Fourth() {
     const {t,i18n} = useTranslation()
     return(
-        <div className="Fourth">
+        <div className="Fourth" id="4">
             <h1>{t("Fourth.0")}</h1>
             <div className="projects">
                 <span>

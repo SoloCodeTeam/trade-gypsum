@@ -1,0 +1,63 @@
+.Footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+    background-color: var(--white);
+    color: var(--purple);
+}
+.Footer div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 3%;
+}
+.Footer .footerMain{
+    width: 100%;
+}
+.Footer span{
+    width: 50%;
+}
+.Footer img{
+    width: 30%;
+    margin-bottom: 2%;
+}
+.Footer a{
+    font-size: 2vw;
+    margin: 0 1.5%;
+    cursor: pointer;
+}
+.Footer p{
+    color: var(--black);
+    font-size: 1vw;
+}
+.Footer span p{
+    font-size: 1.2vw;
+    color: var(--gray);
+    cursor: pointer;
+    width: max-content;
+    margin: 3% 0;
+}
+.Footer span p:hover{
+    border-bottom: .15vw solid var(--purple);
+}
+.Footer a:hover{
+    transform: translateY(-.5vw);
+}
+.Footer .fa-telegram{
+    color: #229ED9;
+}
+.Footer .fa-instagram{
+    background: linear-gradient(#f9ce34,#ee2a7b,#6228d7);
+    color: white;
+    padding: 1%;
+    font-size: 1.5vw;
+    border-radius: .5vw;
+}
+.Footer .fa-facebook{
+    color: #4267B2;
+}
+.Footer .fa-square-phone{
+    color: lightgreen;
+    font-size: 2.2vw;
+}

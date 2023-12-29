@@ -2,8 +2,8 @@
     "Navbar": {
         "0": "BOSH SAHIFA",
         "1": "BIZ HAQIMIZDA",
-        "2": "BAJARILGAN ISHLAR",
-        "3": "KONTAKTLAR"
+        "2": "MAHSULOTLARIMIZ",
+        "3": "BIZ BILAN BOG'LANISH"
     },
     "First": {
         "0": "Biz bilan qulay",
@@ -29,5 +29,8 @@
     },
     "Fourth": {
         "0": "Bizning mahsulotlarimiz"
+    },
+    "Footer": {
+        "0": "© 2024 BNBM. Barcha huquqlar himoyalangan."
     }
 }

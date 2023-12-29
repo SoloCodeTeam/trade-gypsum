@@ -1,4 +1,5 @@
 import { First } from "../../components/First";
+import { Footer } from "../../components/Footer";
 import { Fourth } from "../../components/Fourth";
 import { Navbar } from "../../components/Navbar";
 import { Second } from "../../components/Second";
@@ -12,6 +13,7 @@ export function Home() {
             <Second/>
             <Third/>
             <Fourth/>
+            <Footer/>
         </div>
     )
 }
