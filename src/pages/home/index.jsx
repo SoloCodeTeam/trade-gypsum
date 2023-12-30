@@ -4,6 +4,7 @@ import { Fourth } from "../../components/Fourth";
 import { Navbar } from "../../components/Navbar";
 import { Second } from "../../components/Second";
 import { Third } from "../../components/Third";
+import { Projects } from "../../components/projects";
 
 export function Home() {
     return(
@@ -13,6 +14,7 @@ export function Home() {
             <Second/>
             <Third/>
             <Fourth/>
+            {/* <Projects/> */}
             <Footer/>
         </div>
     )

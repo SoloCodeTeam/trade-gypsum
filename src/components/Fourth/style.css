@@ -16,27 +16,27 @@
     font-size: 2.5vw;
     margin: 2% 0;
 }
-.Fourth div{
+.Fourth .projectsHead{
+    height:50vw;
+    width: 100%;
+}
+.Fourth .projects{
     display: flex;
-    flex-wrap: wrap;
     align-items: start;
     justify-content: start;
+    position: absolute;
+    left: 10%;
 }
 .Fourth span{
-    width: 30%;
-    margin: 1.5%;
+    width: max-content;
+    margin: 1.5% 10vw;
     padding: 0;
-    border-top-right-radius: 3vw;
-    border-top-left-radius: 3vw;
     border: .3vw solid var(--purple);
     display: flex;
-    flex-direction: column;
     align-items: start;
 }
 .Fourth span img{
-    width: 100%;
-    border-top-right-radius: 2.6vw;
-    border-top-left-radius: 2.6vw;
+    width: 20%;
 }
 .Fourth span h2{
     font-size: 2vw;
