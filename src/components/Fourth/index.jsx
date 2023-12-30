@@ -9,19 +9,25 @@ export function Fourth() {
             <div className="projectsHead">
                 <div className="projects">
                     <span>
-                        <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1703694765/BNBM%20trade-gypsum/logo_fppag4.png" alt="" />
-                        <h2>Glory</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
+                        <div className="projectsTexts">
+                            <h2>Glory</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        </div>
                     </span>
                     <span>
-                        <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1703694765/BNBM%20trade-gypsum/logo_fppag4.png" alt="" />
-                        <h2>Glory</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
+                        <div className="projectsTexts">
+                            <h2>Glory</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        </div>
                     </span>
                     <span>
-                        <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1703694765/BNBM%20trade-gypsum/logo_fppag4.png" alt="" />
-                        <h2>Glory</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
+                        <div className="projectsTexts">
+                            <h2>Glory</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                        </div>
                     </span>
                 </div>
             </div>

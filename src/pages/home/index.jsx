@@ -5,6 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { Second } from "../../components/Second";
 import { Third } from "../../components/Third";
 import { Projects } from "../../components/projects";
+import "./style.css"
 
 export function Home() {
     return(
@@ -13,6 +14,7 @@ export function Home() {
             <First/>
             <Second/>
             <Third/>
+            <hr />
             <Fourth/>
             {/* <Projects/> */}
             <Footer/>
