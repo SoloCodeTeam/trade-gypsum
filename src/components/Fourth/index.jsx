@@ -1,22 +1,33 @@
 import { useTranslation } from "react-i18next"
 import "./style.css"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import axios from "axios"
 
 export function Fourth() {
     const {t,i18n} = useTranslation()
     const projects = useRef()
     const spans = useRef()
-    const Left = () => {
-        console.log(projects.current.style.left.substr(1,2))
-        console.log(projects.current);
-        projects.current.style.left = `-30%`
-        projects.current.map(e => {
-            console.log(e);
-        });
+    const [data,setData] = useState()
+    useEffect(() => {
+        setData(axios.get("https://trade-gypsum-back-production.up.railway.app/api/data"))
+    },[])
+    let currentSize = 30
+    const Right = async() => {
+        data.then(res => {
+            if (currentSize > 70-40*res.data.data.length) {
+                projects.current.style.left=`${currentSize-40}%`
+                currentSize = currentSize-40
+            } else currentSize = currentSize
+        })
     }
-    // const Right = () => {    
-        
-    // }
+    const Left = async() => {
+        data.then(res => {
+            if (currentSize < 30) {
+                projects.current.style.left=`${currentSize+40}%`
+                currentSize = currentSize+40
+            } else currentSize = currentSize
+        })
+    }
     return(
         <div className="Fourth" id="4">
             <h1>{t("Fourth.0")}</h1>
@@ -45,7 +56,7 @@ export function Fourth() {
                         </div>
                     </span>
                 </div>
-                <i className="fa-solid fa-chevron-right arrows"></i>
+                <i className="fa-solid fa-chevron-right arrows" onClick={Right}></i>
             </div>
         </div>
     )
