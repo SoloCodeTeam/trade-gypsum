@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next"
 import "./style.css"
 import { useEffect, useRef, useState } from "react"
-import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { GetData } from "../../redux/data"
 

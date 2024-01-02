@@ -29,7 +29,7 @@
 .Second h1{
     color: var(--white);
     font-size: 3.5vw;
-    z-index: 3;
+    z-index: 1;
     margin-top: 7%;
 }
 .Second p{
@@ -37,7 +37,7 @@
     font-size: 1vw;
     width: 50%;
     text-align: left;
-    z-index: 3;
+    z-index: 1;
     margin: 5% 0;
 }
 .Second button{
@@ -57,25 +57,33 @@
 .Second span{
     position: fixed;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    width: 90%;
     top: 100%;
-    left: 30%;
-    background: var(--purple);
-    width: 40%;
-    z-index: 5;
-    overflow-y: scroll;
+    left: 5%;
+    z-index: 8;
+    height: max-content;
 }
 .Second span img{
-    width: 100%;
+    width: 80%;
+    height: min-content;
+}
+.Second span div{
+    margin: 0;
+    padding: 0;
+    height: min-content;
+    border-radius: 1vw;
+    width: 50%;
+    padding: 3% 5%;
+    background: var(--purple);
 }
 .Second span h2{
     color: var(--white);
     font-size: 2.5vw;
-    margin: 5% 0;
+    margin-top: 3%;
 }
 .Second span p{
-    width: 70%;
+    width: 100%;
     font-size: 1vw;
 }
 .Second .overlay{
@@ -85,7 +93,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    z-index: 4;
+    z-index: 7;
     display: none;
 }
 @media(max-width: 500px){
@@ -105,24 +113,46 @@
     }
     .Second h1{
         font-size: 7vw;
-        margin-top: 0;
+        margin-top: 3%;
     }
     .Second p{
-        font-size: 2vw;
+        font-size: 2.2vw;
         width: 80%;
     }
     .Second button{
-        font-size: 2.3vw;
+        font-size: 2.5vw;
         padding: 2.5% 5%;
     }
     .Second span{
         width: 80%;
         left: 10%;
+        flex-direction: column;
+        border-radius: 0;
+        padding-bottom: 5%;
+        border-bottom-left-radius: 1.5vw;
+        border-bottom-right-radius: 1.5vw;
+        background-color: var(--purple);
+    }
+    .Second span img{
+        margin: 0;
+        width: 100%;
+    }
+    .Second span div{
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+        background: none;
     }
     .Second span h2{
-        font-size: 5vw;
+        font-size: 5.5vw;
+        text-align: center;
+        margin: 5% auto;
     }
     .Second span p{
-        font-size: 3vw;
+        font-size: 3.2vw;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 5%;
+        text-align: center;
     }
 }
