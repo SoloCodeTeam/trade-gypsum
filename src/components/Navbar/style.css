@@ -48,7 +48,7 @@
 .Navbar .navSide{
     position: fixed;
     left: 0;
-    top: -1000%;
+    top: -50vw;
     height: max-content;
     display: flex;
     flex-direction: column;

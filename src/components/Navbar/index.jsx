@@ -20,13 +20,13 @@ export function Navbar() {
                     <option value={window.localStorage.getItem("i18nextLng") == "uz" ? "uz" : "ru"}>{window.localStorage.getItem("i18nextLng") == "uz" ? "UZ" : "RU"}</option>
                     <option value={window.localStorage.getItem("i18nextLng") == "ru" ? "uz" : "ru"}>{window.localStorage.getItem("i18nextLng") == "ru" ? "UZ" : "RU"}</option>
                 </select>
-                {bars ? <i class="fa-solid fa-bars" onClick={() => {setBars(false);modal.current.style.top = "90%"}}></i> :
-                <i class="fa-solid fa-bars-staggered" onClick={() => {setBars(true);modal.current.style.top = "-500%"}}></i>}
+                {bars ? <i class="fa-solid fa-bars" onClick={() => {setBars(false);modal.current.style.top = "10vw"}}></i> :
+                <i class="fa-solid fa-bars-staggered" onClick={() => {setBars(true);modal.current.style.top = "-50vw"}}></i>}
             </div>
             <div className="navSide" ref={modal}>
-                <button onClick={() => {window.location.href="/#1";setBars(true);modal.current.style.top = "-500%"}}>{t("Navbar.0")}</button>
-                <button onClick={() => {window.location.href="/#2";setBars(true);modal.current.style.top = "-500%"}}>{t("Navbar.1")}</button>
-                <button onClick={() => {window.location.href="/#4";setBars(true);modal.current.style.top = "-500%"}}>{t("Navbar.2")}</button>
+                <button onClick={() => {window.location.href="/#1";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.0")}</button>
+                <button onClick={() => {window.location.href="/#2";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.1")}</button>
+                <button onClick={() => {window.location.href="/#4";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.2")}</button>
                 <a href="tel:+998900000000">{t("Navbar.3")}</a>
             </div>
         </div>
