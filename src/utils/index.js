@@ -1,0 +1,1 @@
+export const API_URL = "https://trade-gypsum-back-production.up.railway.app/api"

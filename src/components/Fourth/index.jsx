@@ -2,15 +2,18 @@ import { useTranslation } from "react-i18next"
 import "./style.css"
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
+import { useDispatch, useSelector } from "react-redux"
+import { GetData } from "../../redux/data"
 
 export function Fourth() {
     const {t,i18n} = useTranslation()
     const projects = useRef()
-    const spans = useRef()
-    const [data,setData] = useState()
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.data)
     useEffect(() => {
-        setData(axios.get("https://trade-gypsum-back-production.up.railway.app/api/data"))
+        dispatch(GetData())
     },[])
+    console.log(data);
     let currentSize = 30
     const Right = async() => {
         data.then(res => {
@@ -34,27 +37,15 @@ export function Fourth() {
             <div className="projectsHead">
                 <i className="fa-solid fa-chevron-left arrows" onClick={Left}></i>
                 <div className="projects" ref={projects} style={{left: "30%"}}>
-                    <span ref={spans} projectid="1">
-                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
-                        <div className="projectsTexts">
-                            <h2>Glory</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
-                        </div>
-                    </span>
-                    <span ref={spans} projectid="2">
-                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
-                        <div className="projectsTexts">
-                            <h2>Glory</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
-                        </div>
-                    </span>
-                    <span ref={spans} projectid="3">
-                        <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
-                        <div className="projectsTexts">
-                            <h2>Glory</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
-                        </div>
-                    </span>
+                    {data.getData.Success == true ? data.getData?.Data.map((elem, index) => 
+                        <span key={index}>
+                            <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
+                            <div className="projectsTexts">
+                                <h2>Glory</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                            </div>
+                        </span>)
+                    :data.getData.Loading == true ? <i className="loading fa-solid fa-spinner fa-spin-pulse"></i> : data.getData.Error == true ? <h3 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h3> : null}
                 </div>
                 <i className="fa-solid fa-chevron-right arrows" onClick={Right}></i>
             </div>
