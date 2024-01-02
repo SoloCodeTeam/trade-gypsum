@@ -23,6 +23,9 @@ export function Footer() {
                     <p onClick={() => window.location.href="/#2"}>{t("Navbar.1")}</p>
                     <p onClick={() => window.location.href="/#4"}>{t("Navbar.2")}</p>
                 </span>
+                <span>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191884.83987083324!2d69.11455528484187!3d41.28273794647117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2sTashkent%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1693680698334!5m2!1sen!2s" width="400vw" height="300vw"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </span>
             </div>
             <p>{t("Footer.0")}</p>
         </div>
