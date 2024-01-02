@@ -31,10 +31,6 @@
 .Second video::-webkit-media-controls {
     display: none !important;
 }
-.Second video:hover::-webkit-media-controls,
-.Second video:focus::-webkit-media-controls {
-    display: initial !important;
-}
 .Second h1{
     color: var(--white);
     font-size: 3.5vw;

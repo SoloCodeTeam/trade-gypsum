@@ -32,5 +32,9 @@
     },
     "Footer": {
         "0": "© 2024 BNBM. Barcha huquqlar himoyalangan."
+    },
+    "NotFound": {
+        "0": "Sahifa topilmadi",
+        "1": "Asosiy sahifaga qaytish"
     }
 }

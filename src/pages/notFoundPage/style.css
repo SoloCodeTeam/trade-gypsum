@@ -1,0 +1,46 @@
+.NotFoundPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.NotFoundPage img{
+    width: 35%;
+}
+.NotFoundPage h1{
+    color: var(--white);
+    text-shadow: .1vw 0 #3F75BB, -.1vw 0 #3F75BB, 0 .1vw #3F75BB, 0 -.1vw #3F75BB,
+    .07vw .07vw #3F75BB, -.07vw -.07vw #3F75BB, .07vw -.07vw #3F75BB, -.07vw .07vw #3F75BB;
+    font-size: 3vw;
+}
+.NotFoundPage button{
+    font-size: 1.3vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+.NotFoundPage button i{
+    color: var(--white);
+    background-color: var(--purple);
+    padding: 2% 3%;
+    border-radius: 50%;
+    margin-right: 3%;
+}
+.NotFoundPage button:hover{
+    transform: translateX(-2vw);
+}
+@media(max-width: 500px){
+    .NotFoundPage img{
+        width: 90%;
+    }
+    .NotFoundPage h1{
+        font-size: 8vw;
+        margin: 10% 0;
+        text-shadow: .15vw 0 #3F75BB, -.15vw 0 #3F75BB, 0 .15vw #3F75BB, 0 -.15vw #3F75BB,
+        .7vw .7vw #3F75BB, -.7vw -.7vw #3F75BB, .7vw -.7vw #3F75BB, -.5vw .5vw #3F75BB;
+    }
+    .NotFoundPage button{
+        font-size: 5vw;
+    }
+}
