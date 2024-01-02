@@ -13,23 +13,19 @@ export function Fourth() {
     useEffect(() => {
         dispatch(GetData())
     },[])
-    console.log(data);
+    console.log(data.getData);
     let currentSize = 30
     const Right = async() => {
-        data.then(res => {
-            if (currentSize > 70-40*res.data.data.length) {
+            if (currentSize > 70-40*data.getData.Data.data.length) {
                 projects.current.style.left=`${currentSize-40}%`
                 currentSize = currentSize-40
             } else currentSize = currentSize
-        })
     }
     const Left = async() => {
-        data.then(res => {
             if (currentSize < 30) {
                 projects.current.style.left=`${currentSize+40}%`
                 currentSize = currentSize+40
             } else currentSize = currentSize
-        })
     }
     return(
         <div className="Fourth" id="4">
@@ -37,12 +33,12 @@ export function Fourth() {
             <div className="projectsHead">
                 <i className="fa-solid fa-chevron-left arrows" onClick={Left}></i>
                 <div className="projects" ref={projects} style={{left: "30%"}}>
-                    {data.getData.Success == true ? data.getData?.Data.map((elem, index) => 
+                    {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
                         <span key={index}>
-                            <img src="https://www.americangypsum.com/sites/default/files/CLASSICROC-Gypsum-Wallboard-American-Gypsum.jpg" alt="" />
+                            <img src={elem.img} alt="" />
                             <div className="projectsTexts">
-                                <h2>Glory</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias illum eaque quo delectus, obcaecati laboriosam.</p>
+                                <h2>{elem.title}</h2>
+                                <p>{elem.text}</p>
                             </div>
                         </span>)
                     :data.getData.Loading == true ? <i className="loading fa-solid fa-spinner fa-spin-pulse"></i> : data.getData.Error == true ? <h3 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h3> : null}
