@@ -25,6 +25,7 @@
     z-index: 0;
     border-top-right-radius: 2.7vw;
     border-top-left-radius: 2.7vw;
+    object-fit: cover;
 }
 .Second h1{
     color: var(--white);

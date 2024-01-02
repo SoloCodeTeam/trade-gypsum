@@ -10,7 +10,7 @@
     margin: 5% 0;
 }
 .Fourth .projectsHead{
-    height: 50vw;
+    height: 40vw;
     width: 100%;
     overflow-x: hidden;
 }
@@ -19,7 +19,7 @@
     align-items: start;
     justify-content: start;
     position: absolute;
-    left: 30%;
+    left: 29.5%;
 }
 .Fourth span{
     width: 30vw;
@@ -38,7 +38,7 @@
     align-items: start;
 }
 .Fourth span h2{
-    font-size: 2.7vw;
+    font-size: 2.5vw;
     color: var(--purple);
     margin: 5%;
 }
@@ -48,6 +48,7 @@
     text-align: left;
     margin: 5%;
     margin-top: 0;
+    width: 80%;
 }
 .Fourth .arrows{
     position: absolute;
@@ -66,6 +67,22 @@
 .Fourth .fa-chevron-right{
     right: 5%;
 }
+.Fourth .Loading, .Fourth .Error{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    font-size: 2vw;
+    margin-top: 13vw;
+    margin-left: 13vw;
+}
+.Fourth .Loading{
+    font-size: 4vw;
+    color: var(--purple);
+}
+.Fourth .Error i{
+    color: red;
+    font-size: 10vw;
+}
 @media(max-width: 900px) {
     .Fourth h1{
         font-size: 3.5vw;
@@ -81,10 +98,6 @@
     .Fourth h1{
         font-size: 4vw;
     }
-    .Fourth div span{
-        width: 45%;
-        margin: 2.5%;
-    }
     .Fourth div h2{
         font-size: 3.5vw;
     }
@@ -97,17 +110,38 @@
         margin: 0;
         width: 100%;    
     }
+    .Fourth .projects{
+        left: 17%;
+    }
     .Fourth h1{
-        font-size: 7vw;
+        font-size: 6vw;
         margin: 7% 0;
     }
+    .Fourth .projectsHead{
+        height: 85vw;
+    }
     .Fourth div span{
-        width: 100vw;
+        width: 50vw;
+        margin: 0 10vw;
     }
     .Fourth div h2{
         font-size: 6vw;
     }
-    .Fourth div p{
-        font-size: 3.5vw;
+    .Fourth .arrows{
+        font-size: 5vw;
     }
+    .Fourth div p{
+        font-size: 3vw;
+    }
+    .Fourth .Loading, .Fourth .Error{
+        margin-top: 30vw;
+        margin-left: 23vw;
+        font-size: 4vw;
+    }
+    .Fourth .Loading{
+        font-size: 15vw;
+    }
+    .Fourth .Error i{
+        font-size: 20vw;
+    }    
 }

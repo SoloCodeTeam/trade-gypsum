@@ -24,9 +24,9 @@ export function Navbar() {
                 <i class="fa-solid fa-bars-staggered" onClick={() => {setBars(true);modal.current.style.top = "-50vw"}}></i>}
             </div>
             <div className="navSide" ref={modal}>
-                <button onClick={() => {window.location.href="/#1";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.0")}</button>
-                <button onClick={() => {window.location.href="/#2";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.1")}</button>
-                <button onClick={() => {window.location.href="/#4";setBars(true);modal.current.style.top = "-30vw"}}>{t("Navbar.2")}</button>
+                <button onClick={() => {window.location.href="/#1";setBars(true);modal.current.style.top = "-50vw"}}>{t("Navbar.0")}</button>
+                <button onClick={() => {window.location.href="/#2";setBars(true);modal.current.style.top = "-50vw"}}>{t("Navbar.1")}</button>
+                <button onClick={() => {window.location.href="/#4";setBars(true);modal.current.style.top = "-50vw"}}>{t("Navbar.2")}</button>
                 <a href="tel:+998900000000">{t("Navbar.3")}</a>
             </div>
         </div>
