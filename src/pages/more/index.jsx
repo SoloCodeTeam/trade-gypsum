@@ -1,4 +1,5 @@
-import verticalNavbarAdminPage from "../../components/verticalNavbarAdminPage"
+import { VerticalNavbarAdminPage } from "../../components/verticalNavbarAdminPage"
+import "./style.css"
 export function Admin() {
     // $(document).ready(function(){
     //     $(".hamburger").click(function(){
@@ -8,11 +9,11 @@ export function Admin() {
     return(
         <div className="Admin">
             <div className="leftNavbar">
-                <verticalNavbarAdminPage />
+                <VerticalNavbarAdminPage />
             </div>
 
             <div className="rightContent">
-
+                <h1>salom</h1>
             </div>
         </div>
     )

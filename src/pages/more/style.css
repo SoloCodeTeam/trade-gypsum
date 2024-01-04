@@ -1,0 +1,7 @@
+.leftNavbar {
+    max-width: 40%;
+    height: 100vh;
+}
+.Admin {
+    display: flex;
+}

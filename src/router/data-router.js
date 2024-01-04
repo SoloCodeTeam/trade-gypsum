@@ -1,4 +1,4 @@
-import { lazy } from 'react'
+// import { lazy } from 'react'
 // const  Home  = lazy(() => import ('../pages/home/index'))
 // const  NotFoundPage  = lazy(() => import ('../pages/notFoundPage/index'))
 // const Sign = lazy(() => import ('../pages/sign/index'))

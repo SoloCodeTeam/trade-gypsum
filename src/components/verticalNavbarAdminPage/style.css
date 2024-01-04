@@ -115,4 +115,18 @@
     .SidebarBars{
         display: block;
     }
+    
+}
+@media(max-width: 700px){
+    .blockgai1 {
+        display: none;
+    }
+    .blockgai2 {
+        display:block;
+    }
+}
+@media(min-width: 700px){
+    .blockgai2 {
+        display:none;
+    }
 }
