@@ -7,7 +7,8 @@ import { lazy } from 'react'
 import { Home } from '../pages/home/index.jsx'
 import { NotFoundPage } from '../pages/notFoundPage/index.jsx'
 import { Sign } from '../pages/sign/index.jsx'
-import { Admin } from '../pages/admin/index.jsx'
+// import { Admin } from '../pages/admin/index.jsx'
+import { Admin } from '../pages/more/index.jsx'
 
 export const DataRouter = [
     {

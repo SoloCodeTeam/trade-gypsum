@@ -1,0 +1,118 @@
+.ClientPanelSidebar{
+    width: max-content;
+    background-color: rgb(242, 242, 242);
+    /* border-right: .1vw solid rgb(169, 168, 168); */
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 3%;
+}
+.Clientpathpucher a{
+    background-color: #f7f7f7;
+    color: #478EF2;
+    padding: 1% 1.6%;
+    font-size: 2vw;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 2;
+    bottom: 3%;
+    left: 2%;
+}
+.Clientpathpucher a:hover{
+    background-color: #478EF2;
+    color: #f7f7f7;
+}
+.ClientPanelSidebar .sidetop{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20%;
+}
+.ClientPanelSidebar .sidetop span{
+    background-color: rgb(72, 72, 232);
+    color: white;
+    padding: 10% 15%;
+    /* font-size: 1.5vw; */
+    border-radius: .5vw;
+    margin-right: 15%;
+}
+.ClientPanelSidebar .sidetop h1{
+    /* font-size: 1.7vw; */
+    color: rgb(51, 51, 51);
+}
+.ClientPanelSidebar .sidebottom button{
+    display: flex;
+    align-items: center;
+    margin: 20% 0;
+    color: rgb(51, 51, 51);
+    cursor: default;
+    transition: .2s;
+    background: none;
+}
+.ClientPanelSidebar .sidebottom button:hover{
+    transform: translateX(1vw);
+    color:  #0F70DA;
+}
+.ClientPanelSidebar .sidebottom button h3{
+    /* font-size: 1.5vw; */
+    margin-right: 10%;
+    cursor: default;
+}
+.ClientPanelSidebar .sidebottom button h2{
+    /* font-size: 1.3vw; */
+    width: max-content;
+    cursor: default;
+    display: flex;
+}
+.SidebarBars{
+    z-index: 3 !important;
+    position: fixed;
+    display: none;
+    background: none;
+    font-size: 7vw;
+    left: 5%;
+    top: 5%;
+    color: black;
+}
+.sidedown{
+    display: none;
+}
+@media(max-width: 900px){
+    .ClientPanelSidebar{
+        padding: 4% 3%;
+    }
+}
+@media(max-width: 700px){
+    .SidebarBars{
+        display: block;
+    }
+    .Clientpathpucher a{
+        font-size: 6vw;
+        padding: 3% 5%;
+        left: 4%;
+    }
+    .ClientPanelSidebar{
+        transition: 1s;
+        text-align: center !important;
+        padding: 5% 8%;
+        left: -100%;
+        width: 100%;
+    }
+    .ClientPanelSidebar .sidebottom button h3, .ClientPanelSidebar .sidebottom button h2{
+        font-size: 5.5vw;
+    }
+    .ClientPanelSidebar .sidetop{
+        margin-left: 10%;
+        margin-bottom: 6%;
+    }
+    .ClientPanelSidebar .sidetop h1{
+        font-size: 9vw;
+    }
+    .ClientPanelSidebar .sidetop span{
+        font-size: 9vw;
+    }
+    .SidebarBars{
+        display: block;
+    }
+}
