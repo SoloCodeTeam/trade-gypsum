@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css"
-// import "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"
 export function VerticalNavbarAdminPage() {
     
     return(
