@@ -1,6 +1,112 @@
+
 .Sign{
-    background-image: url("https://res.cloudinary.com/ds9evspym/image/upload/v1704222694/BNBM%20trade-gypsum/55938547323_yyzswk.png");
     width: 100%;
-    background-size: 50%;
-    background: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--purple);
+    overflow: hidden;
+}
+.SignPath{
+    background-color: var(--white);
+    color: var(--purple);
+    padding: 1vw 1.2vw;
+    font-size: 2vw;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 2;
+    top: 3%;
+    left: 2%;
+    transition: .1s;
+    cursor: pointer;
+}
+.SignPath:hover{
+    background-color: var(--purple);
+    color: var(--white);
+}
+.SignModal{
+    background-color: var(--white);
+    color: var(--purple);
+    padding: 2vw 3vw;
+    border-radius: 2vw;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.SignModal h1{
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    text-align: center;
+}
+.SignModal p{
+    text-align: center;
+    font-size: 1.3vw;
+    margin: 1vw;
+}
+.Sign input{
+    outline: none;
+    font-size: 1.3vw;
+    border-radius: 1vw;
+    border: .1vw solid var(--black);
+    padding: 1vw;
+    width:  100%;
+    margin: .5vw;
+    color: var(--black);
+}
+.Sign input:hover{
+    border: .1vw solid var(--purple);
+}
+.Sign button{
+    color: var(--white);
+    border: 0.15vw solid var(--gray);
+    border-bottom: .4vw solid var(--gray);
+    padding: .8vw 1.8vw;
+    border-radius: 2vw;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    background: var(--purple);
+    transition: 5s;
+}
+.Sign button:active{
+    border: .1vw solid var(--gray);
+}
+.SignP{
+    color: red;
+}
+@media screen and (max-width: 650px) {
+    .Sign{
+        overflow: hidden;
+    }
+    .SignPath{
+        font-size: 5vw;
+        padding: 3.5vw 3.9vw;
+    }
+    .SignModal{
+        width: 85%;
+        /* height: 55vh; */
+        padding: 6vw;
+        border-radius: 8vw;
+    }
+    .SignModal h1{
+        font-size: 9.5vw;
+    }
+    .SignModal p{
+        font-size: 4vw;
+        margin: 3vw;
+    }
+    .SignModal input{
+        font-size: 4vw;
+        margin: 1.3vw;
+        padding: 3vw;
+        border-radius: 4vw;
+    }
+    .SignModal button{
+        font-size: 4.5vw;
+        border-radius: 4vw;
+        margin: 2vw;
+        padding: 2vw 10vw;
+    }
 }
