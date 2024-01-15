@@ -36,5 +36,13 @@
     "NotFound": {
         "0": "Sahifa topilmadi",
         "1": "Asosiy sahifaga qaytish"
+    },
+    "Admin": {
+        "0": "Boshqaruv paneli",
+        "1": "Qidirish",
+        "2": "Adminlar",
+        "3": "Ma'lumotlar",
+        "4": "Xabarlar",
+        "5": "Account"
     }
 }

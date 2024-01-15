@@ -78,6 +78,13 @@
 .sidedown{
     display: none;
 }
+.ClientPanelSidebar select{
+    cursor: pointer;
+    font-weight: bold;
+}
+.ClientPanelSidebar img{
+    width: 5vw;
+}
 @media(max-width: 900px){
     .ClientPanelSidebar{
         padding: 4% 3%;

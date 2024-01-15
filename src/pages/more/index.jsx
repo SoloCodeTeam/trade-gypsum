@@ -13,7 +13,7 @@ export function Admin() {
             </div>
 
             <div className="rightContent">
-                <h1>salom</h1>
+                <h1>ok</h1>
             </div>
         </div>
     )
