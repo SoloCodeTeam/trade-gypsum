@@ -44,5 +44,12 @@
         "3": "Ma'lumotlar",
         "4": "Xabarlar",
         "5": "Account"
+    },
+    "Login": {
+        "0": "Log in",
+        "1": "Siz bu yerdan Admin panlega o'ta olasiz.Iltimos ism va parolni to'g'ri holatda kiriting!",
+        "2": "Internet, ism yoki parolda xatolik mavjud!",
+        "3": "Ismingizni kiriting",
+        "4": "Parolingizni kiriting"
     }
 }
