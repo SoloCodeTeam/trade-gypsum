@@ -71,7 +71,7 @@
     transition: 5s;
 }
 .Sign button:active{
-    border: .1vw solid var(--gray);
+    border: none;
 }
 .SignP{
     color: red;

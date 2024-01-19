@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import DataSlice from "./data/index"
+import DataSlice from "./login/index"
+import LoginSlice from "./login/index"
 
 export const store = configureStore({
     reducer:{
-        data: DataSlice
+        data: DataSlice,
+        login: LoginSlice
     }
 })
