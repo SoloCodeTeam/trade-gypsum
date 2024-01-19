@@ -21,6 +21,12 @@
     transition: .1s;
     cursor: pointer;
 }
+.SignPath:nth-child(3){
+    right: 2%;
+    left: auto;
+    border-radius: 20%;
+    font-size: 1.3vw;
+}
 .SignPath:hover{
     background-color: var(--purple);
     color: var(--white);
@@ -76,6 +82,20 @@
 .SignP{
     color: red;
 }
+/* .Sign select{
+    border-radius: 2vw;
+    padding: .3vw .5vw;
+    font-size: 1.5vw;
+    background-color: white;
+    color: var(--purple);
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.Sign option{
+    background-color: var(--white);
+    color: var(--purple);
+} */
 @media screen and (max-width: 650px) {
     .Sign{
         overflow: hidden;
@@ -83,6 +103,10 @@
     .SignPath{
         font-size: 5vw;
         padding: 3.5vw 3.9vw;
+    }
+    .SignPath:nth-child(3){
+        right: 2%;
+        font-size:5vw;
     }
     .SignModal{
         width: 85%;

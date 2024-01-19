@@ -43,6 +43,10 @@ export function Sign() {
             <input type="text" ref={namePassUp} placeholder={t("Login.3")} className='ins'/>
             <button type='submit'>{t("Login.0")}</button>
         </form>
+        <select className="SignPath" onChange={(e) => { window.localStorage.setItem("i18nextLng", e.target.value);window.location.reload()}}>
+                    <option value={window.localStorage.getItem("i18nextLng") == "uz" ? "uz" : "ru"}>{window.localStorage.getItem("i18nextLng") == "uz" ? "UZ" : "RU"}</option>
+                    <option value={window.localStorage.getItem("i18nextLng") == "ru" ? "uz" : "ru"}>{window.localStorage.getItem("i18nextLng") == "ru" ? "UZ" : "RU"}</option>
+        </select>
     </div>
   );
 }
