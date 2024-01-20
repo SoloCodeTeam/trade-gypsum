@@ -18,6 +18,9 @@ export function AdminData() {
                 <h1>Datas</h1>
                 <button>Add data</button>
             </div>
+            <div className="dataModal">
+                
+            </div>
             <div className="dataData">
                     {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
                         <span key={index}>

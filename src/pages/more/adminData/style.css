@@ -25,11 +25,10 @@
     align-items: start;
     justify-content: start;
     flex-wrap: wrap;
-    left: 29.5%;
 }
 .AdminData span{
     width: 30%;
-    margin: 3% 2%;
+    margin: 3% 1.5%;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,23 +54,6 @@
     margin: 5%;
     margin-top: 0;
     width: 80%;
-}
-.AdminData .arrows{
-    position: absolute;
-    margin-top: 15%;
-    font-size: 2vw;
-    background-color: var(--white);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1% 1.5%;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 5;
-}
-.AdminData .fa-chevron-left{
-    left: 5%;
-} 
-.AdminData .fa-chevron-right{
-    right: 5%;
 }
 .AdminData .Loading, .AdminData .Error{
     display: flex;
