@@ -39,7 +39,7 @@ export const DataRouter = [
     {
         id : 6,
         path : '/admin/message',
-        Element : <Admin  type="data"/>
+        Element : <Admin  type="message"/>
     },
     {
         id : 7,

@@ -1,0 +1,22 @@
+.AdminData .dataNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+}
+.AdminData .dataNavbar h1{
+    font-size: 2vw;
+    font-weight: bolder;
+    color: var(--purple);
+}
+.AdminData .dataNavbar button{
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 1% 2%;
+    border-radius: 1vw;
+}
+.AdminData .dataData{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}

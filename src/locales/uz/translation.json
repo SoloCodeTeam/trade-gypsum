@@ -54,8 +54,12 @@
     },
     "AdminHome": {
         "0": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempore.",
-        "1": "Перейти к данным",
-        "2": "Перейти к администраторам",
-        "3": "Перейти к сообщению"
+        "1": "Ma'lumotlarga o'tish",
+        "2": "Adminlarga o'tish",
+        "3": "Xabarga o'tish"
+    },
+    "AdminMessage": {
+        "0": "Xabar hali ",
+        "1": "qo'shilmagan"
     }
 }

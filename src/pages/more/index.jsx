@@ -4,6 +4,8 @@ import "./style.css"
 import { useEffect } from "react";
 import { AdminHome } from "./adminHome";
 import { AdminSearch } from "./adminSearch";
+import { AdminMessage } from "./adminMessage";
+import { AdminData } from "./adminData";
 
 export function Admin({type}) {
     const navigate = useNavigate()
@@ -17,7 +19,9 @@ export function Admin({type}) {
             </div>
             <div className="rightContent">
                 {
-                type == "search" ? <AdminSearch/>
+                type == "search" ? <AdminSearch/> :
+                type == "message" ? <AdminMessage/>:
+                type == "data"? <AdminData/>
                 : <AdminHome/>}
             </div>
         </div>
