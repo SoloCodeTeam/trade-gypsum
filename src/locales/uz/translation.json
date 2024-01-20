@@ -51,5 +51,11 @@
         "2": "Internet, ism yoki parolda xatolik mavjud!",
         "3": "Ismingizni kiriting",
         "4": "Parolingizni kiriting"
+    },
+    "AdminHome": {
+        "0": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempore.",
+        "1": "Перейти к данным",
+        "2": "Перейти к администраторам",
+        "3": "Перейти к сообщению"
     }
 }

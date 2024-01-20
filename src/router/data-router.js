@@ -19,15 +19,35 @@ export const DataRouter = [
     {
         id : 2,
         path : '/admin',
-        Element : <Admin/>
+        Element : <Admin  type="home"/>
     },
     {
         id : 3,
+        path : '/admin/search',
+        Element : <Admin type="search"/>
+    },
+    {
+        id : 4,
+        path : '/admin/admin',
+        Element : <Admin type="admin"/>
+    },
+    {
+        id : 5,
+        path : '/admin/data',
+        Element : <Admin  type="data"/>
+    },
+    {
+        id : 6,
+        path : '/admin/message',
+        Element : <Admin  type="data"/>
+    },
+    {
+        id : 7,
         path : '/sign',
         Element : <Sign/>
     },
     {
-        id : 4,
+        id : 8,
         path : '/*',
         Element : <NotFoundPage/>
     }

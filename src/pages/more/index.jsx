@@ -2,8 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { VerticalNavbarAdminPage } from "../../components/verticalNavbarAdminPage"
 import "./style.css"
 import { useEffect } from "react";
+import { AdminHome } from "./adminHome";
+import { AdminSearch } from "./adminSearch";
 
-export function Admin() {
+export function Admin({type}) {
     const navigate = useNavigate()
     useEffect(() => {
         window.localStorage.getItem("AuthToken") ? console.log("ok") : navigate("/sign")
@@ -13,9 +15,10 @@ export function Admin() {
             <div className="leftNavbar">
                 <VerticalNavbarAdminPage />
             </div>
-
             <div className="rightContent">
-                <h1>ok</h1>
+                {
+                type == "search" ? <AdminSearch/>
+                : <AdminHome/>}
             </div>
         </div>
     )

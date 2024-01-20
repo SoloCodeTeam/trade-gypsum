@@ -85,6 +85,9 @@
 .ClientPanelSidebar img{
     width: 5vw;
 }
+.blockgai1 a{
+    cursor: pointer;
+}
 @media(max-width: 900px){
     .ClientPanelSidebar{
         padding: 4% 3%;

@@ -1,0 +1,57 @@
+.AdminHome{
+    padding: 5% 3%;
+}
+.AdminHome h1{
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: bolder;
+    color: var(--purple);
+    font-family: sans-serif;
+    margin-bottom: 1.5vw;
+}
+.AdminHome div{
+    display: flex;
+    align-items: start;
+}
+.AdminHome span{
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2%;
+    padding: 2% 3%;
+}
+.AdminHome span:hover{
+    transform: scale(1.1);
+}
+.AdminHome span h2{
+    font-size: 2vw;
+    font-weight: bolder;
+    color: var(--black);
+}
+.AdminHome span i{
+    margin-right: .3vw;
+}
+.AdminHome span .fa-database{
+    color: green;
+}
+.AdminHome span .fa-user-tie{
+    color: var(--gray);
+}
+.AdminHome span .fa-comment{
+    color:blue;
+}
+.AdminHome span p{
+    width: 100%;
+    margin: 1vw 0;
+    font-size: 1vw;
+}
+.AdminHome span button{
+    color: var(--purple);
+    padding: 2%;
+    font-size: 1.1vw;
+}
+.AdminHome span .fa-arrow-right{
+    font-size: .9vw;
+}
+.AdminHome span button:hover{
+    transform: translateX(1vw);
+}
