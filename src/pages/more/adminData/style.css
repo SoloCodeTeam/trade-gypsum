@@ -20,3 +20,134 @@
     align-items: start;
     justify-content: center;
 }
+.AdminData .dataData{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    left: 29.5%;
+}
+.AdminData span{
+    width: 30%;
+    margin: 3% 2%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1% 3%;
+}
+.AdminData span img{
+    width: 100%;
+}
+.AdminData span .projectsTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.AdminData span h2{
+    font-size: 2.3vw;
+    color: var(--purple);
+    margin: 5%;
+}
+.AdminData span p{
+    font-size: 1.1vw;
+    color: var(--black);
+    text-align: left;
+    margin: 5%;
+    margin-top: 0;
+    width: 80%;
+}
+.AdminData .arrows{
+    position: absolute;
+    margin-top: 15%;
+    font-size: 2vw;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1% 1.5%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
+.AdminData .fa-chevron-left{
+    left: 5%;
+} 
+.AdminData .fa-chevron-right{
+    right: 5%;
+}
+.AdminData .Loading, .AdminData .Error{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    font-size: 2vw;
+    margin-top: 13vw;
+    margin-left: 13vw;
+}
+.AdminData .Loading{
+    font-size: 4vw;
+    color: var(--purple);
+}
+.AdminData .Error i{
+    color: red;
+    font-size: 10vw;
+}
+@media(max-width: 900px) {
+    .AdminData h1{
+        font-size: 3.5vw;
+    }
+    .AdminData div h2{
+        font-size: 3vw;
+    }
+    .AdminData div p{
+        font-size:1.3vw;
+    }
+}
+@media(max-width: 700px) {
+    .AdminData h1{
+        font-size: 4vw;
+    }
+    .AdminData div h2{
+        font-size: 3.5vw;
+    }
+    .AdminData div p{
+        font-size: 1.7vw;
+    }
+}
+@media(max-width: 500px) {
+    .AdminData{
+        margin: 0;
+        width: 100%;    
+    }
+    .AdminData .projects{
+        left: 17%;
+    }
+    .AdminData h1{
+        font-size: 6vw;
+        margin: 7% 0;
+    }
+    .AdminData .projectsHead{
+        height: 85vw;
+    }
+    .AdminData div span{
+        width: 50vw;
+        margin: 0 10vw;
+    }
+    .AdminData div h2{
+        font-size: 6vw;
+    }
+    .AdminData .arrows{
+        font-size: 5vw;
+    }
+    .AdminData div p{
+        font-size: 3vw;
+    }
+    .AdminData .Loading, .AdminData .Error{
+        margin-top: 30vw;
+        margin-left: 23vw;
+        font-size: 4vw;
+    }
+    .AdminData .Loading{
+        font-size: 15vw;
+    }
+    .AdminData .Error i{
+        font-size: 20vw;
+    }    
+}

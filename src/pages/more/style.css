@@ -5,3 +5,6 @@
 .Admin {
     display: flex;
 }
+.rightContent{
+    margin-left: 10%;
+}

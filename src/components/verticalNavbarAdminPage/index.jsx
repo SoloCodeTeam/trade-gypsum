@@ -16,7 +16,7 @@ export function VerticalNavbarAdminPage() {
 		navigate(`/admin/${e.target.id}`)
 	}
     return(
-        <>
+        <div className="Sidebar">
         <div className="flex flex-col items-center w-40  h-full overflow-hidden text-indigo-300 bg-indigo-900 rounded blockgai1">
 		<a className="flex items-center w-full px-3 mt-3">
 			<img className="w-7 h-7" src="https://res.cloudinary.com/ds9evspym/image/upload/v1703694765/BNBM%20trade-gypsum/logo_fppag4.png" alt="logo" />
@@ -117,6 +117,6 @@ export function VerticalNavbarAdminPage() {
 			</a>
 		</div>
 	</div>
-    </>
+    </div>
     )
 }

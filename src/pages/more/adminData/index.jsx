@@ -15,8 +15,8 @@ export function AdminData() {
     return(
         <div className="AdminData">
             <div className="dataNavbar">
-                <h1>Admins</h1>
-                <button>Add admin</button>
+                <h1>Datas</h1>
+                <button>Add data</button>
             </div>
             <div className="dataData">
                     {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
