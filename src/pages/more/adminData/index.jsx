@@ -2,15 +2,19 @@ import "./style.css"
 import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { GetData } from "../../../redux/data"
+import { GetData, PostData } from "../../../redux/data"
 import axios from "axios"
-import { IMAGE_URL } from "../../../utils"
+import { API_URL, IMAGE_URL } from "../../../utils"
 
 
 export function AdminData() {
     const {t,i18n} = useTranslation()
     const dispatch = useDispatch()
     const data = useSelector(state => state.data)
+    const modal = useRef()
+    const overlay = useRef()
+    const title = useRef()
+    const text = useRef()
     useEffect(() => {
         dispatch(GetData())
     },[])
@@ -39,16 +43,42 @@ export function AdminData() {
     const RemoveImage = () => {
         setUploadedImage(null)
     }
+    const CloseModal = () => {
+        overlay.current.style.display = "none"
+        modal.current.style.top = "-100%"
+        if (title.current.value) title.current.value = null
+        if(text.current.value) text.current.value = null
+        setUploadedImage(null)
+    }
+    const OpenModal = () => {
+        overlay.current.style.display = "block"
+        modal.current.style.top = "3%"
+    }
+    const SendData = async(e) => {
+        e.preventDefault()
+        const body = {
+            title: title.current.value,
+            text: text.current.value,
+            img: uploadedImage,
+        }
+        // const config =  window.localStorage.getItem("AuthToken")
+        // await PostData({config,body})
+        const headers = {
+            "Authorization": "Token " + window.localStorage.getItem("AuthToken")
+        }
+        await axios.post(`${API_URL}/data`, body, headers).then((res) => console.log(res.data));
+        CloseModal()
+    }
     return(
         <div className="AdminData">
             <div className="dataNavbar">
                 <h1>Datas</h1>
-                <button>Add data</button>
+                <button onClick={OpenModal}>Add data</button>
             </div>
-            <div className="overlay"></div>
-            <div className="dataModal">
+            <div className="overlay" ref={overlay} onClick={CloseModal}></div>
+            <div ref={modal} className="dataModal">
                 <h3>Add Data</h3>
-                <span>
+                <form onSubmit={SendData}>
                     <div>
                         <h5>Image</h5>
                         {loading ? <p className='loading'>Loading...</p> : uploadedImage ? 
@@ -59,16 +89,16 @@ export function AdminData() {
                                 <button onClick={RemoveImage} className="fa-solid fa-trash"></button>
                             </div>
                         </div>
-                        : <input type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
+                        : <input required type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
                     </div>
                      <div>
                         <h5>Title</h5>
-                        <input type="text" />
+                        <input required ref={title} type="text" placeholder="..."/>
                         <h5>Text</h5>
-                        <textarea></textarea>
-                        <button>Add</button>
+                        <textarea required ref={text} placeholder="..."></textarea>
+                        <button type="submit">Add</button>
                      </div>
-                </span>
+                </form>
             </div>
             <div className="dataData">
                     {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
