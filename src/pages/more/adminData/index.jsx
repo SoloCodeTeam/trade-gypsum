@@ -2,7 +2,7 @@ import "./style.css"
 import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { GetData, PostData } from "../../../redux/data"
+import { DeleteData, GetData, PostData } from "../../../redux/data"
 import axios from "axios"
 import { API_URL, IMAGE_URL } from "../../../utils"
 
@@ -12,9 +12,13 @@ export function AdminData() {
     const dispatch = useDispatch()
     const data = useSelector(state => state.data)
     const modal = useRef()
+    const editModal = useRef()
     const overlay = useRef()
     const title = useRef()
     const text = useRef()
+    const editTitle = useRef("...")
+    const editText = useRef("...")
+    const [editId,setEditId] = useState()
     useEffect(() => {
         dispatch(GetData())
     },[])
@@ -50,6 +54,7 @@ export function AdminData() {
     const CloseModal = () => {
         overlay.current.style.display = "none"
         modal.current.style.top = "-100%"
+        editModal.current.style.top = "-100%"
         if (title.current.value) title.current.value = null
         if(text.current.value) text.current.value = null
         setUploadedImage(null)
@@ -65,23 +70,48 @@ export function AdminData() {
             text: text.current.value,
             img: uploadedImage,
         }
-        await axios.post(`${API_URL}/data`, body, config).then((res) => console.log(res.data));
+        console.log(body);
+        await axios.post(`${API_URL}/data`, body, config)
+        CloseModal()
+        window.location.reload()
+    }
+    const RemoveData = async(e) => {
+        const id = e.target.id
+        await axios.delete(`${API_URL}/data/${id}`, config)
+        window.location.reload()
+    }
+    const OpenEditModal = async(e) => {
+        editTitle.current.value = e.target.title
+        editText.current.value = e.target.value
+        setUploadedImage(e.target.lang)
+        setEditId(e.target.id)
+        overlay.current.style.display = "block"
+        editModal.current.style.top = "3%"
+    }
+    const EditData = async(e) => {
+        e.preventDefault()
+        const body = {
+            title: editTitle.current.value,
+            text:  editText.current.value,
+            img: uploadedImage
+        }
+        await axios.put(`${API_URL}/data/${editId}`,body,config)
         CloseModal()
         window.location.reload()
     }
     return(
         <div className="AdminData">
             <div className="dataNavbar">
-                <h1>Datas</h1>
-                <button onClick={OpenModal}>Add data</button>
+                <h1>{t("AdminData.0")}</h1>
+                <button onClick={OpenModal}>{t("AdminData.1")}</button>
             </div>
             <div className="overlay" ref={overlay} onClick={CloseModal}></div>
             <div ref={modal} className="dataModal">
-                <h3>Add Data</h3>
+                <h3>{t("AdminData.1")}</h3>
                 <form onSubmit={SendData}>
                     <div>
-                        <h5>Image</h5>
-                        {loading ? <p className='loading'>Loading...</p> : uploadedImage ? 
+                        <h5>{t("AdminData.3")}</h5>
+                        {loading ? <p className='loading'>{t("AdminData.8")}</p> : uploadedImage ? 
                         <div className="imgDiv">
                             <img src={uploadedImage} alt="image" />
                             <div className="modalEdits">
@@ -92,11 +122,35 @@ export function AdminData() {
                         : <input required type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
                     </div>
                      <div>
-                        <h5>Title</h5>
+                        <h5>{t("AdminData.4")}</h5>
                         <input required ref={title} type="text" placeholder="..."/>
-                        <h5>Text</h5>
+                        <h5>{t("AdminData.5")}</h5>
                         <textarea required ref={text} placeholder="..."></textarea>
-                        <button type="submit">Add</button>
+                        <button type="submit">{t("AdminData.2")}</button>
+                     </div>
+                </form>
+            </div>
+            <div ref={editModal} className="dataModal">
+                <h3>{t("AdminData.6")}</h3>
+                <form onSubmit={EditData}>
+                    <div>
+                        <h5>{t("AdminData.3")}</h5>
+                        {loading ? <p className='loading'>{t("AdminData.8")}</p> : uploadedImage ? 
+                        <div className="imgDiv">
+                            <img src={uploadedImage} alt="image" />
+                            <div className="modalEdits">
+                                <button onClick={RemoveImage} className="fa-solid fa-rotate"></button>
+                                <button onClick={RemoveImage} className="fa-solid fa-trash"></button>
+                            </div>
+                        </div>
+                        : <input required type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
+                    </div>
+                     <div>
+                        <h5>{t("AdminData.4")}</h5>
+                        <input required ref={editTitle} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
+                        <h5>{t("AdminData.5")}</h5>
+                        <textarea required ref={editText} placeholder="...">{editText.current.value}</textarea>
+                        <button type="submit">{t("AdminData.7")}</button>
                      </div>
                 </form>
             </div>
@@ -108,8 +162,8 @@ export function AdminData() {
                                 <h2>{elem.title}</h2>
                                 <p>{elem.text}</p>
                                 <span>
-                                <button className="fa-solid fa-pen"></button>
-                                <button className="fa-solid fa-trash"></button>
+                                <button id={elem._id} lang={elem.img} title={elem.title} value={elem.text} className="fa-solid fa-pen" onClick={OpenEditModal}></button>
+                                <button id={elem._id} className="fa-solid fa-trash" onClick={RemoveData}></button>
                                 </span>
                             </div>
                         </span>)
@@ -118,117 +172,3 @@ export function AdminData() {
         </div>
     )
 }
-
-
-// import { IMAGE_URL } from '../../../utils';
-
-// function Projects() {
-//     const name = useRef();
-//     const moreImages = useRef([]);
-//     const [editTitle, setEditTitle] = useState();
-//     const [editMainImages, setEditMainImages] = useState([]);
-//     const [projectModal, SetProjectModal] = useState(false)
-//     const [projectModal1, SetProjectModal1] = useState(false)
-//     const projectOverlay = useRef(false)
-//     const [imgUpload, setImgUpload] = useState();
-//     const [loading, setLoading] = useState();
-//     const [imagesLoading, setImgesLoading] = useState(false);
-//     const [moreEdit, setMoreEdit] = useState();
-//     const [moreLoading, setMoreLoading] = useState();
-//     const dispatch = useDispatch()
-//     const dataProject = useSelector(state => state.project)
-//     const [moreUploadImage, setmoreUploadImage] = useState();
-//     const input = useRef(null)
-//     const inputMain = useRef(null)
-//     const [imgId, setImgId] = useState();
-//     useEffect(() => {
-//       dispatch(GetProject())
-//     }, [1])
-    
-//     const UploadFile = async(e) => {
-//         const imgsUpload = [];
-//         for (let i = 0; i < e.target.files.length; i++) {
-//           const element = e.target.files[i];
-//           const formData = new FormData()
-//           formData.append('file', element)
-//           formData.append('upload_preset', 'aozyh8sm')
-//           setMoreLoading(true);
-//           const postImage = async () => {
-//               try {
-//                   const response = await axios.post(`${IMAGE_URL}`, formData)
-//                   imgsUpload.push(response?.data.secure_url)
-//                   setMoreLoading(false)
-//               } catch (error) {
-//                   console.log(error);
-//               }
-//             }
-//             postImage()
-//           }
-//         setmoreUploadImage(imgsUpload)
-//     }
-//   return (
-//     <div className="Projects">
-//         <div className="overlay" ref={projectOverlay} onClick={() => {SetProjectModal(false);projectOverlay.current.style.display = "none";SetProjectModal1(false);setImgUpload(null);setmoreUploadImage(null);setLoading(null);setMoreLoading(null)}}></div>
-//         {projectModal ? <form onSubmit={HandleSubmit} className="projectModal">
-//             <h3>Add Project</h3>
-//             <div>
-//                 <h4>Enter Project Title</h4>
-//                 <input type="text" ref={name} placeholder='Enter Project Name' required/>
-//                 <h4>Choose Project Main Photo</h4>
-//                 {loading ? <p className='yellowLoading'>Loading...</p> : <input type="file" id="noneId" onChange={HandleFile} />}
-//                 <button type="submit">Add</button>
-//             </div>
-//         </form> :null}
-//         {projectModal1 ? <form onSubmit={HandleSubmit1} className="projectModal">
-//             <h3>Edit Project</h3>
-//             <div>
-//                 <h4>Edit Project Title</h4>
-//                 <input type="text" onChange={handleChange}  value={editTitle}/>
-//                 <h4>Edit Project Main Photo</h4>
-//                 {loading ? <p className='yellowLoading'>Loading...</p> :
-//                 <div className="editImageBox">
-//                 <img src={moreEdit.data.img} alt="img" />
-//                     <div className='AdBtnBox'>
-//                         <button onClick={() => inputMain.current.click()} type="button"><i className="fa-solid fa-edit"></i></button>
-//                         <input ref={inputMain} type="file" onChange={HandleFile}/>
-//                     </div>
-//                 </div>}
-//                 <h4>Edit Project More Photos</h4>
-//                 {moreEdit.data.images.length > 0 ?
-//                  moreEdit.data.images.map((e,i) => <span key={i}>{imagesLoading ? <p className='yellowLoading'>Loading ...</p>
-//                      :<div className="editImageBox">
-//                         <img src={e.img} alt="img" />
-//                         <div className='AdBtnBox'>
-//                             <button id={e.id} onClick={deleteImage} type="button"><i className="fa-solid fa-trash" id={e.id} onClick={deleteImage}></i></button>
-//                             <button id={e.id} onClick={(el) => {setImgId(el.target.id);input.current.click();}} type="button"><i className="fa-solid fa-edit" id={e.id}></i></button>
-//                             <input ref={input} id={e.id} type="file" onChange={HandleEditImagesFile}/>
-//                         </div>
-//                     </div>
-//                     }</span>)
-//                  : <p>No Photos here yet</p>}
-//                 <h4>Add Other More Photo</h4>
-//                 {moreLoading ? <p className='yellowLoading'>Loading ...</p> :<input type="file" onChange={UploadFile} multiple />}
-//                 <button type="submit">Edit</button>
-//             </div>
-//         </form> :null}
-//         <div className="ProjectsNav">
-//             <h1><i className='fa-solid fa-folder'></i> Projects</h1>
-//             <button className='ProjectsNavBtn' onClick={AddProject}>+<i className='fa-solid fa-folder'></i> Add Project</button>
-//         </div>
-//         <ul>
-//             {dataProject.getProject.Success == true ? dataProject.getProject?.Data.data.data.map((elem, index) => 
-//             <li key={index}>
-//                 <img src={elem.img} alt="img" />
-//                 <h3>{elem.title}</h3>
-//                 <div className="AdBtnBox">
-//                     <button value={elem.id} onClick={projectDelete}><i className="fa-solid fa-trash"></i>Delete</button>
-//                     <button id={elem.id} onClick={projectEdit}><i className="fa-solid fa-edit"></i>Edit</button>
-//                 </div>
-//             </li>)
-//             :dataProject.getProject.Loading == true ? <i className="loading fa-solid fa-spinner fa-spin-pulse"></i> : dataProject.getProject.Error == true ? <h3 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h3> : null}
-//         </ul>
-//     </div>
-//   );
-// }
-
-// export default Projects;

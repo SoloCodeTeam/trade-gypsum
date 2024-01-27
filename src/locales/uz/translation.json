@@ -61,5 +61,16 @@
     "AdminMessage": {
         "0": "Xabar hali ",
         "1": "qo'shilmagan"
+    },
+    "AdminData": {
+        "0": "Ma'lumotlar",
+        "1": "Ma'lumot qo'shish",
+        "2": "Qo'shish",
+        "3": "Rasm",
+        "4": "Sarlavha",
+        "5": "Matn",
+        "6": "Ma'lumotni o'zgartirish",
+        "7": "O'zgartirish",
+        "8": "Yuklanmoqda..."
     }
 }
