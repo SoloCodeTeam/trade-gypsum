@@ -5,7 +5,7 @@ import { API_URL } from "../../utils";
 export const GetData = createAsyncThunk("data/get", async () => {
   return await axios.get(`${API_URL}/data`).then((res) => res.data);
 });
-export const PostData = createAsyncThunk("data/post",async ({ config, body }) => {
+export const PostData = createAsyncThunk("data/post",async ({config,body}) => {
     return await axios.post(`${API_URL}/data`, body, config).then((res) => res.data.data);
   }
 );

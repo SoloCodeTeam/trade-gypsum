@@ -65,9 +65,9 @@ export function AdminData() {
             text: text.current.value,
             img: uploadedImage,
         }
-        await PostData({config,body})
         await axios.post(`${API_URL}/data`, body, config).then((res) => console.log(res.data));
         CloseModal()
+        window.location.reload()
     }
     return(
         <div className="AdminData">
