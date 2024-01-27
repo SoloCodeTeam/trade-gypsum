@@ -20,7 +20,11 @@ export function AdminData() {
     },[])
     const [loading,setLoading] = useState()
     const [uploadedImage,setUploadedImage] = useState()
-
+    const config = {
+        headers:{
+            token: `${window.localStorage.getItem("AuthToken")}` 
+        }
+      }    
     const ImageUpload = async(e) => {
         for (let i = 0; i < e.target.files.length; i++) {
           const element = e.target.files[i];
@@ -61,12 +65,8 @@ export function AdminData() {
             text: text.current.value,
             img: uploadedImage,
         }
-        // const config =  window.localStorage.getItem("AuthToken")
-        // await PostData({config,body})
-        const headers = {
-            "Authorization": "Token " + window.localStorage.getItem("AuthToken")
-        }
-        await axios.post(`${API_URL}/data`, body, headers).then((res) => console.log(res.data));
+        await PostData({config,body})
+        await axios.post(`${API_URL}/data`, body, config).then((res) => console.log(res.data));
         CloseModal()
     }
     return(
