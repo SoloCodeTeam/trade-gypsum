@@ -55,3 +55,81 @@
 .AdminHome span button:hover{
     transform: translateX(1vw);
 }
+@media(max-width: 900px){
+    .AdminHome h1{
+        font-size: 3vw;
+        margin-bottom: 1.5vw;
+    }
+    .AdminHome span h2{
+        font-size: 2.5vw;
+    }
+    .AdminHome span i{
+        margin-right: .7vw;
+    }
+    .AdminHome span p{
+        margin: 1.3vw 0;
+        font-size: 1.4vw;
+    }
+    .AdminHome span button{
+        padding: 2%;
+        font-size: 1.5vw;
+    }
+    .AdminHome span .fa-arrow-right{
+        font-size: .9vw;
+    }
+}
+@media(max-width: 600px){
+    .AdminHome h1{
+        font-size: 3.5vw;
+        margin-bottom: 1.5vw;
+    }
+    .AdminHome div{
+        flex-wrap: wrap;
+    }
+    .AdminHome span{
+        width: 46%;
+    }
+    .AdminHome span h2{
+        font-size: 3vw;
+    }
+    .AdminHome span i{
+        margin-right: 1vw;
+    }
+    .AdminHome span p{
+        margin: 1.4vw 0;
+        font-size: 1.6vw;
+    }
+    .AdminHome span button{
+        padding: 2%;
+        font-size: 1.7vw;
+    }
+    .AdminHome span .fa-arrow-right{
+        font-size: 1.2vw;
+    }
+}
+@media(max-width: 500px){
+    .AdminHome h1{
+        font-size: 5vw;
+        margin-bottom: 1.5vw;
+    }
+    .AdminHome div{
+        flex-wrap: wrap;
+    }
+    .AdminHome span{
+        width: 90%;
+    }
+    .AdminHome span h2{
+        font-size: 4.5vw;
+    }
+    .AdminHome span p{
+        margin: 1.5vw 0;
+        font-size: 3vw;
+    }
+    .AdminHome span button{
+        padding: 2%;
+        font-size: 3vw;
+    }
+    .AdminHome span .fa-arrow-right{
+        font-size: 2vw;
+    }
+}

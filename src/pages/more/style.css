@@ -6,5 +6,10 @@
     display: flex;
 }
 .rightContent{
-    margin-left: 10%;
+    margin-left: 110pt;
+}
+@media(max-width: 700px){
+    .rightContent{
+        margin-left: 50pt;
+    }  
 }
