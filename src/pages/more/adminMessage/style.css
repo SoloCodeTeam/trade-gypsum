@@ -16,3 +16,11 @@
 .AdminMessage span{
     color: red;
 }
+@media (max-width: 600px){
+    .AdminMessage img{
+        width: 100%;
+    }
+    .AdminMessage h1{
+        font-size: 5vw;
+    }
+}
