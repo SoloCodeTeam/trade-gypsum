@@ -274,12 +274,12 @@
         padding: 3vw 2vw;
     }
     .AdminData .dataNavbar h1{
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
     .AdminData .dataNavbar button{
         padding: 1% 2%;
         border-radius: 1vw;
-        font-size: 1.7vw;
+        font-size: 2vw;
     }
     .AdminData span{
         width: 30%;
@@ -289,15 +289,15 @@
         padding: 1% 3%;
     }
     .AdminData span h2{
-        font-size: 2.7vw;
+        font-size: 3vw;
         margin: 3%;
     }
     .AdminData span p{
-        font-size: 1.5vw;
+        font-size: 1.7vw;
         margin: 5%;
     }
     .AdminData .Loading, .AdminData .Error{
-        font-size: 2vw;
+        font-size: 3vw;
         margin-top: 13vw;
         margin-left: 13vw;
     }
@@ -314,13 +314,13 @@
         border-radius: 1.5vw;
     }
     .AdminData .dataModal h3{
-        font-size: 3.5vw;
+        font-size: 4vw;
     }
     .AdminData .dataModal form{
         padding: 0 2vw;
     }
     .AdminData .dataModal h5{
-        font-size: 2vw;
+        font-size: 3vw;
         margin: 5% 0;
     }
     .AdminData .dataModal input, .AdminData .dataModal textarea{
@@ -338,7 +338,7 @@
     .AdminData .dataModal button{
         padding: 1vw;
         border-radius: 2vw;
-        font-size: 1.7vw;
+        font-size: 2vw;
         margin-top: 7vw;
     }
     .AdminData .dataModal div{
@@ -353,13 +353,13 @@
     }
     .AdminData .fa-pen,.AdminData .dataModal div .modalEdits .fa-rotate{
         padding: .5vw;
-        font-size: 2vw;
+        font-size: 2.5vw;
         border-radius: .5vw;
         margin-right: 1vw;
     }
     .AdminData .fa-trash,.AdminData .dataModal div .modalEdits .fa-trash{
         padding: .5vw;
-        font-size: 2vw;
+        font-size: 2.5vw;
         border-radius: .5vw;
     }
 }
