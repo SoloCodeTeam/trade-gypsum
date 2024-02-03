@@ -2,7 +2,6 @@ import "./style.css"
 import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { DeleteData, GetData, PostData } from "../../../redux/data"
 import axios from "axios"
 import { API_URL, IMAGE_URL } from "../../../utils"
 import { GetAdmin } from "../../../redux/admin"
@@ -22,15 +21,16 @@ export function AdminAdmin() {
     const editSurname = useRef("...")
     const editPassword = useRef("...")
     const [editId,setEditId] = useState()
-    useEffect(() => {
-        dispatch(GetAdmin())
-    },[])
-    const [loading,setLoading] = useState()
     const config = {
         headers:{
             token: `${window.localStorage.getItem("AuthToken")}` 
         }
     }
+    useEffect(() => {
+        dispatch(GetAdmin({config}))
+    },[])
+    console.log(data.getAdmin);
+    const [loading,setLoading] = useState()
     const CloseModal = () => {
         overlay.current.style.display = "none"
         modal.current.style.top = "-100%"
@@ -79,7 +79,7 @@ export function AdminAdmin() {
         window.location.reload()
     }
     return(
-        <div className="AdminData">
+        <div className="AdminAdmin">
             <div className="dataNavbar">
                 <h1>{t("AdminAdmin.0")}</h1>
                 <button onClick={OpenModal}>{t("AdminAdmin.1")}</button>
@@ -122,7 +122,7 @@ export function AdminAdmin() {
                                 </span>
                             </div>
                         </span>)
-                    :data.getData.Loading == true ? <i className="Loading fa-solid fa-spinner fa-spin-pulse"></i> : data.getData.Error == true ? <h3 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h3> : null}
+                    :data.getAdmin.Loading == true ? <i className="Loading fa-solid fa-spinner fa-spin-pulse"></i> : data.getAdmin.Error == true ? <h3 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h3> : null}
             </div>
         </div>
     )

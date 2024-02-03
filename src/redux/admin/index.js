@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../../utils";
 
-export const GetAdmin = createAsyncThunk("admin/get", async () => {
-  return await axios.get(`${API_URL}/admin`).then((res) => res.data);
+export const GetAdmin = createAsyncThunk("admin/get", async ({config}) => {
+  return await axios.get(`${API_URL}/admin`,config).then((res) => res.data);
 });
 export const PostAdmin = createAsyncThunk("admin/post",async ({ config, body }) => {
     return await axios.post(`${API_URL}/admin`, body, config).then((res) => res.data.data);
