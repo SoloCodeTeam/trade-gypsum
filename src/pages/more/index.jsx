@@ -6,6 +6,7 @@ import { AdminHome } from "./adminHome";
 import { AdminSearch } from "./adminSearch";
 import { AdminMessage } from "./adminMessage";
 import { AdminData } from "./adminData";
+import { AdminAdmin } from "./adminAdmin";
 
 export function Admin({type}) {
     const navigate = useNavigate()
@@ -21,7 +22,8 @@ export function Admin({type}) {
                 {
                 type == "search" ? <AdminSearch/> :
                 type == "message" ? <AdminMessage/>:
-                type == "data"? <AdminData/>
+                type == "data"? <AdminData/>:
+                type == "admin" ? <AdminAdmin/>
                 : <AdminHome/>}
             </div>
         </div>
