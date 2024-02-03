@@ -12,7 +12,7 @@ i18next
       translation: uz
     },
     ru:{
-      translation:ru,
+      translation: ru,
     }
   },
   lng: window.localStorage.getItem('i18nextLng'),
