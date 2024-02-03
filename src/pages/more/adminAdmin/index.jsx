@@ -5,59 +5,39 @@ import { useDispatch, useSelector } from "react-redux"
 import { DeleteData, GetData, PostData } from "../../../redux/data"
 import axios from "axios"
 import { API_URL, IMAGE_URL } from "../../../utils"
+import { GetAdmin } from "../../../redux/admin"
 
 
 export function AdminAdmin() {
     const {t,i18n} = useTranslation()
     const dispatch = useDispatch()
-    const data = useSelector(state => state.data)
+    const data = useSelector(state => state.admin)
     const modal = useRef()
     const editModal = useRef()
     const overlay = useRef()
-    const title = useRef()
-    const text = useRef()
-    const editTitle = useRef("...")
-    const editText = useRef("...")
+    const name = useRef()
+    const surname = useRef()
+    const password = useRef()
+    const editName = useRef("...")
+    const editSurname = useRef("...")
+    const editPassword = useRef("...")
     const [editId,setEditId] = useState()
     useEffect(() => {
-        dispatch(GetData())
+        dispatch(GetAdmin())
     },[])
     const [loading,setLoading] = useState()
-    const [uploadedImage,setUploadedImage] = useState()
     const config = {
         headers:{
             token: `${window.localStorage.getItem("AuthToken")}` 
         }
-      }    
-    const ImageUpload = async(e) => {
-        for (let i = 0; i < e.target.files.length; i++) {
-          const element = e.target.files[i];
-          const formData = new FormData()
-          formData.append('file', element)
-          formData.append('upload_preset', 'qmbc46ov')
-          setLoading(true);
-          const postImage = async () => {
-              try {
-                  const response = await axios.post(`${IMAGE_URL}`, formData)
-                  setUploadedImage(response?.data.secure_url)
-                  setLoading(false)
-              } catch (error) {
-                  console.log(error);
-              }
-            }
-            postImage()
-          }
-    }
-    const RemoveImage = () => {
-        setUploadedImage(null)
     }
     const CloseModal = () => {
         overlay.current.style.display = "none"
         modal.current.style.top = "-100%"
         editModal.current.style.top = "-100%"
-        if (title.current.value) title.current.value = null
-        if(text.current.value) text.current.value = null
-        setUploadedImage(null)
+        if (name.current.value) name.current.value = null
+        if(surname.current.value) surname.current.value = null
+        if(password.current.value) password.current.value = null
     }
     const OpenModal = () => {
         overlay.current.style.display = "block"
@@ -66,24 +46,23 @@ export function AdminAdmin() {
     const SendData = async(e) => {
         e.preventDefault()
         const body = {
-            title: title.current.value,
-            text: text.current.value,
-            img: uploadedImage,
+            name: name.current.value,
+            surname: surname.current.value,
+            password: password.current.value,
         }
-        console.log(body);
-        await axios.post(`${API_URL}/data`, body, config)
+        await axios.post(`${API_URL}/admin`, body, config)
         CloseModal()
         window.location.reload()
     }
     const RemoveData = async(e) => {
         const id = e.target.id
-        await axios.delete(`${API_URL}/data/${id}`, config)
+        await axios.delete(`${API_URL}/admin/${id}`, config)
         window.location.reload()
     }
     const OpenEditModal = async(e) => {
-        editTitle.current.value = e.target.title
-        editText.current.value = e.target.value
-        setUploadedImage(e.target.lang)
+        editName.current.value = e.target.title
+        editSurname.current.value = e.target.value
+        editPassword.current.value = e.target.lang
         setEditId(e.target.id)
         overlay.current.style.display = "block"
         editModal.current.style.top = "3%"
@@ -91,11 +70,11 @@ export function AdminAdmin() {
     const EditData = async(e) => {
         e.preventDefault()
         const body = {
-            title: editTitle.current.value,
-            text:  editText.current.value,
-            img: uploadedImage
+            name: editName.current.value,
+            surname:  editSurname.current.value,
+            password: editPassword.current.value
         }
-        await axios.put(`${API_URL}/data/${editId}`,body,config)
+        await axios.put(`${API_URL}/admin/${editId}`,body,config)
         CloseModal()
         window.location.reload()
     }
@@ -110,11 +89,11 @@ export function AdminAdmin() {
                 <h3>{t("AdminAdmin.1")}</h3>
                 <form onSubmit={SendData}>
                     <h5>{t("AdminAdmin.3")}</h5>
-                    <input required ref={title} type="text" placeholder="..."/>
+                    <input required ref={name} type="text" placeholder="..."/>
                     <h5>{t("AdminAdmin.4")}</h5>
-                    <input required ref={title} type="text" placeholder="..."/>
+                    <input required ref={surname} type="text" placeholder="..."/>
                     <h5>{t("AdminAdmin.5")}</h5>
-                    <input required ref={text} placeholder="..."></input>
+                    <input required ref={password} placeholder="..."></input>
                     <button type="submit">{t("AdminAdmin.2")}</button>
                 </form>
             </div>
@@ -122,23 +101,23 @@ export function AdminAdmin() {
                 <h3>{t("AdminAdmin.6")}</h3>
                 <form onSubmit={EditData}>
                     <h5>{t("AdminAdmin.3")}</h5>
-                    <input required ref={title} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
+                    <input required ref={editName} type="text" placeholder="..." defaultValue={editName.current.value}/>
                     <h5>{t("AdminAdmin.4")}</h5>
-                    <input required ref={editTitle} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
+                    <input required ref={editSurname} type="text" placeholder="..." defaultValue={editSurname.current.value}/>
                     <h5>{t("AdminAdmin.5")}</h5>
-                    <input required ref={editText} placeholder="..." defaultValue={editText.current.value}></input>
+                    <input required ref={editPassword} placeholder="..." defaultValue={editPassword.current.value}></input>
                     <button type="submit">{t("AdminAdmin.7")}</button>
                 </form>
             </div>
             <div className="dataData">
-                    {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
+                    {data.getAdmin.Success == true ? data.getAdmin.Data.data.map((elem, index) => 
                         <span key={index}>
                             <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1706970489/BNBM%20trade-gypsum/frccnby3p81lhxprqe1a.png" alt="" />
                             <div className="projectsTexts">
-                                <h2>{elem.title}</h2>
-                                <p>{elem.text}</p>
+                                <h2>{elem.name}</h2>
+                                <p>{elem.surname}</p>
                                 <span>
-                                    <button id={elem._id} lang={elem.img} title={elem.title} value={elem.text} className="fa-solid fa-pen" onClick={OpenEditModal}></button>
+                                    <button id={elem._id} lang={elem.password} title={elem.name} value={elem.surname} className="fa-solid fa-pen" onClick={OpenEditModal}></button>
                                     <button id={elem._id} className="fa-solid fa-trash" onClick={RemoveData}></button>
                                 </span>
                             </div>
