@@ -9,9 +9,9 @@ import { AdminData } from "./adminData";
 
 export function Admin({type}) {
     const navigate = useNavigate()
-    useEffect(() => {
-        window.localStorage.getItem("AuthToken") ? console.log("ok") : navigate("/sign")
-      }, [])
+    // useEffect(() => {
+    //     window.localStorage.getItem("AuthToken") ? console.log("ok") : navigate("/sign")
+    //   }, [])
     return(
         <div className="Admin">
             <div className="leftNavbar">

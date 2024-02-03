@@ -109,7 +109,7 @@
 }
 @media(max-width: 500px){
     .AdminHome h1{
-        font-size: 5vw;
+        font-size: 6vw;
         margin-bottom: 1.5vw;
     }
     .AdminHome div{
@@ -117,6 +117,7 @@
     }
     .AdminHome span{
         width: 90%;
+        margin-bottom: 10%;
     }
     .AdminHome span h2{
         font-size: 4.5vw;
