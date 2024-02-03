@@ -72,5 +72,16 @@
         "6": "Ma'lumotni o'zgartirish",
         "7": "O'zgartirish",
         "8": "Yuklanmoqda..."
+    },
+    "AdminAdmin": {
+        "0": "Adminlar",
+        "1": "Admin qo'shish",
+        "2": "Qo'shish",
+        "3": "Ism",
+        "4": "Familiya",
+        "5": "Parol",
+        "6": "Adminni o'zgartirish",
+        "7": "O'zgartirish",
+        "8": "Yuklanmoqda..."
     }
 }

@@ -102,68 +102,44 @@ export function AdminAdmin() {
     return(
         <div className="AdminData">
             <div className="dataNavbar">
-                <h1>{t("AdminData.0")}</h1>
-                <button onClick={OpenModal}>{t("AdminData.1")}</button>
+                <h1>{t("AdminAdmin.0")}</h1>
+                <button onClick={OpenModal}>{t("AdminAdmin.1")}</button>
             </div>
             <div className="overlay" ref={overlay} onClick={CloseModal}></div>
             <div ref={modal} className="dataModal">
-                <h3>{t("AdminData.1")}</h3>
+                <h3>{t("AdminAdmin.1")}</h3>
                 <form onSubmit={SendData}>
-                    <div>
-                        <h5>{t("AdminData.3")}</h5>
-                        {loading ? <p className='loading'>{t("AdminData.8")}</p> : uploadedImage ? 
-                        <div className="imgDiv">
-                            <img src={uploadedImage} alt="image" />
-                            <div className="modalEdits">
-                                <button onClick={RemoveImage} className="fa-solid fa-rotate"></button>
-                                <button onClick={RemoveImage} className="fa-solid fa-trash"></button>
-                            </div>
-                        </div>
-                        : <input required type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
-                    </div>
-                     <div>
-                        <h5>{t("AdminData.4")}</h5>
-                        <input required ref={title} type="text" placeholder="..."/>
-                        <h5>{t("AdminData.5")}</h5>
-                        <textarea required ref={text} placeholder="..."></textarea>
-                        <button type="submit">{t("AdminData.2")}</button>
-                     </div>
+                    <h5>{t("AdminAdmin.3")}</h5>
+                    <input required ref={title} type="text" placeholder="..."/>
+                    <h5>{t("AdminAdmin.4")}</h5>
+                    <input required ref={title} type="text" placeholder="..."/>
+                    <h5>{t("AdminAdmin.5")}</h5>
+                    <input required ref={text} placeholder="..."></input>
+                    <button type="submit">{t("AdminAdmin.2")}</button>
                 </form>
             </div>
             <div ref={editModal} className="dataModal">
-                <h3>{t("AdminData.6")}</h3>
+                <h3>{t("AdminAdmin.6")}</h3>
                 <form onSubmit={EditData}>
-                    <div>
-                        <h5>{t("AdminData.3")}</h5>
-                        {loading ? <p className='loading'>{t("AdminData.8")}</p> : uploadedImage ? 
-                        <div className="imgDiv">
-                            <img src={uploadedImage} alt="image" />
-                            <div className="modalEdits">
-                                <button onClick={RemoveImage} className="fa-solid fa-rotate"></button>
-                                <button onClick={RemoveImage} className="fa-solid fa-trash"></button>
-                            </div>
-                        </div>
-                        : <input required type="file" id="noneId" className="UploadInput" onChange={ImageUpload} />}
-                    </div>
-                     <div>
-                        <h5>{t("AdminData.4")}</h5>
-                        <input required ref={editTitle} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
-                        <h5>{t("AdminData.5")}</h5>
-                        <textarea required ref={editText} placeholder="...">{editText.current.value}</textarea>
-                        <button type="submit">{t("AdminData.7")}</button>
-                     </div>
+                    <h5>{t("AdminAdmin.3")}</h5>
+                    <input required ref={title} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
+                    <h5>{t("AdminAdmin.4")}</h5>
+                    <input required ref={editTitle} type="text" placeholder="..." defaultValue={editTitle.current.value}/>
+                    <h5>{t("AdminAdmin.5")}</h5>
+                    <input required ref={editText} placeholder="..." defaultValue={editText.current.value}></input>
+                    <button type="submit">{t("AdminAdmin.7")}</button>
                 </form>
             </div>
             <div className="dataData">
                     {data.getData.Success == true ? data.getData.Data.data.map((elem, index) => 
                         <span key={index}>
-                            <img src={elem.img} alt="" />
+                            <img src="https://res.cloudinary.com/ds9evspym/image/upload/v1706970489/BNBM%20trade-gypsum/frccnby3p81lhxprqe1a.png" alt="" />
                             <div className="projectsTexts">
                                 <h2>{elem.title}</h2>
                                 <p>{elem.text}</p>
                                 <span>
-                                <button id={elem._id} lang={elem.img} title={elem.title} value={elem.text} className="fa-solid fa-pen" onClick={OpenEditModal}></button>
-                                <button id={elem._id} className="fa-solid fa-trash" onClick={RemoveData}></button>
+                                    <button id={elem._id} lang={elem.img} title={elem.title} value={elem.text} className="fa-solid fa-pen" onClick={OpenEditModal}></button>
+                                    <button id={elem._id} className="fa-solid fa-trash" onClick={RemoveData}></button>
                                 </span>
                             </div>
                         </span>)
